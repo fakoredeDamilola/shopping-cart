@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (
                 cartArr.find(
                     (item) =>
-                        item.name === e.target.previousElementSibling.innerHTML
+                        item.name === e.target.id
                 )
             ) {
                 alert("added to cart");
