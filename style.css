@@ -1,0 +1,307 @@
+:root {
+  --display: flex;
+  --justifyContent: center;
+  --alignItem: center;
+  --textAlign: center;
+  --flexDirection: column;
+  --fontSize: 18px;
+  --primaryColor: black;
+  --secondaryColor: white;
+  --tertiaryColor: #950002;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.imageContainer img {
+  width: 100%;
+}
+.cardBody {
+  text-align: center;
+  margin: 20px 0;
+}
+.cardTitle {
+  margin: 10px 0;
+  font-size: 25px;
+}
+.cardDescription {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.divButton {
+  display: flex;
+  margin: 0;
+}
+.divButton .span {
+  font-size: 22px;
+}
+.divButton button {
+  padding: 5px 15px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0px;
+  margin: 0;
+}
+.cancel {
+  background: transparent;
+  color: red;
+  font-size: 22px;
+  font-weight: 900;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/*  */
+
+.displayedDiv {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  padding: 20px;
+}
+.cart {
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 28px;
+  margin-top: 50px;
+}
+.cart img {
+  width: 70px;
+}
+.trayOfItems {
+  margin-bottom: 100px;
+  background: white;
+}
+.result {
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  background-color: rgb(158, 158, 158);
+}
+.outputDiv {
+  background-color: white;
+  font-size: 26px;
+  text-align: center;
+  padding: 10px;
+  z-index: 20;
+  display: var(--display);
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+.outputDiv .price {
+  font-size: 22px;
+  margin-top: 10px;
+}
+.outputDiv .output {
+  font-size: 30px;
+  color: var(--tertiaryColor);
+}
+.changeQuantity {
+  margin: 0 7px;
+}
+
+/* textcontainer */
+.textContainer {
+  padding: 10px;
+}
+.name {
+  font-size: 25px;
+  margin-bottom: 0px;
+  font-weight: 900;
+}
+.price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  z-index: 999;
+  background: var(--primaryColor);
+}
+.header-top {
+  display: var(--display);
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--secondaryColor);
+  font-size: 26px;
+  font-weight: 900;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.menu-toggle {
+  cursor: pointer;
+}
+.bars-text {
+  box-sizing: border-box;
+}
+.bars {
+  width: 35px;
+  margin: 5px 0px;
+  height: 2px;
+  max-height: 2px;
+  border-radius: 4px;
+  background-color: var(--secondaryColor);
+}
+.bars:nth-child(2) {
+  width: 20px;
+}
+
+.header nav ul {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: rgb(20, 20, 20);
+  color: var(--secondaryColor);
+  position: fixed;
+  height: auto;
+
+  left: 100%;
+  border-top: 0;
+  transition: 0.5s;
+  list-style: none;
+  display: var(--display);
+  justify-content: var(--justifyContent);
+  align-items: var(--alignItem);
+  flex-direction: var(--flexDirection);
+  width: 250px;
+  height: 100vh;
+}
+.header nav ul.active {
+  left: 0;
+}
+.header nav ul li {
+  padding: 16px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.header nav ul li a {
+  color: var(--secondaryColor) !important;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.animation {
+  width: 0%;
+
+  margin-top: 5px;
+  background: var(--secondaryColor);
+  transition: 0.5s all;
+  height: 4px;
+  max-height: 4px;
+}
+.header nav ul li:hover a {
+  color: #777;
+}
+.header nav ul li:hover .animation,
+.header nav ul li.actived .animation {
+  background: #777;
+  width: 60px;
+}
+
+@media (min-width: 1000px) {
+  #container {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-gap: 20px;
+  }
+  .displayedDiv {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-bottom: 1px solid #777;
+  }
+  .trayOfItems {
+    background: white;
+  }
+  .result {
+    background: rgb(160, 159, 159);
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 0;
+  }
+  .header nav ul li {
+    padding-left: 10px;
+  }
+
+  .header-top {
+    padding: 30px 40px;
+  }
+  .header nav ul li a {
+    color: var(--primaryColor);
+  }
+  .header nav ul {
+    height: auto;
+    padding: 0px 10px;
+    position: static;
+    margin-top: -75px;
+    display: var(--display);
+    flex-direction: row;
+    float: right;
+    width: auto;
+    text-align: right;
+    background: transparent;
+    top: 0;
+    left: 0;
+    padding-top: 15px;
+    right: 0;
+  }
+  /* s */
+  .header nav ul li {
+    padding: 0 10px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .header nav ul li:hover .animation,
+  .header nav ul li.actived .animation {
+    width: 40px;
+    background: var(--secondaryColor);
+  }
+  .cart {
+    margin-top: 0px;
+  }
+}
