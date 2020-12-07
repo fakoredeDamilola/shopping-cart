@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 cartArr.find(
                     (item) =>
                         item.id === e.target.id
+
                 )
             ) {
                 alert("added to cart");
